@@ -15,12 +15,14 @@ struct GamesListView: View {
     var body: some View {
         NavigationView {
             List(games) { game in
-                Text(game.fullName)
+                NavigationLink(destination: GameView(game: game)) {
+                    Text(game.fullName)
+                }
             }
-        .navigationBarTitle("Games")
+            .navigationBarTitle("Games")
         }
     }
-
+    
 }
 
 struct GamesView_Previews: PreviewProvider {
