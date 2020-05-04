@@ -14,7 +14,6 @@ struct StartView: View {
     
     var body: some View {
         Button(action: {
-            self.viewModel.selectedTab = .games
             self.viewModel.chooseRandomGame()
         }) {
             Text("Show random game")
