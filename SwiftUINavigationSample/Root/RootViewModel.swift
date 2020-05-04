@@ -16,6 +16,8 @@ final class RootViewModel: ObservableObject {
     let gamesListViewModel = GamesListViewModel()
     
     func chooseRandomGame() {
+        selectedTab = .games
+        gamesListViewModel.selected = gamesListViewModel.games.randomElement()
     }
     
 }

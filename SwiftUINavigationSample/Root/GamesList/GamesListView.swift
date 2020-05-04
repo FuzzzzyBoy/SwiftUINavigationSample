@@ -14,11 +14,9 @@ struct GamesListView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                List(viewModel.games) { game in
-                    NavigationLink(destination: GameView(game: game)) {
-                        Text(game.fullName)
-                    }
+            List(viewModel.games) { game in
+                NavigationLink(destination: GameView(game: game), tag: game, selection: self.$viewModel.selected) {
+                    Text(game.fullName)
                 }
             }
             .navigationBarTitle("Games")

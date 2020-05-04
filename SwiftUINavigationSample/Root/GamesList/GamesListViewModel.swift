@@ -11,5 +11,7 @@ import Combine
 final class GamesListViewModel: ObservableObject {
     
     private(set) var games = Game.allCases
+    
+    @Published var selected: Game?
 
 }
