@@ -9,26 +9,40 @@
 import SwiftUI
 
 struct RootView: View {
-
+    
+    @State var selectedTab: RootViewTab = .start
+    
+    @EnvironmentObject var viewModel: RootViewModel
+    
     var body: some View {
-        TabView {
+        TabView(selection: $viewModel.selectedTab) {
+            StartView()
+                .environmentObject(viewModel)
+                .tabItem {
+                    Image(systemName: "circle.grid.hex")
+                    Text("Start")
+            }
+            .tag(RootViewTab.start)
             GamesListView(games: Game.allCases)
                 .tabItem {
                     Image(systemName: "list.dash")
                     Text("Games")
             }
+            .tag(RootViewTab.games)
             AboutView()
                 .tabItem {
                     Image(systemName: "person")
                     Text("About")
             }
+            .tag(RootViewTab.about)
         }
     }
-
+    
 }
 
 struct RootView_Previews: PreviewProvider {
     static var previews: some View {
         RootView()
+            .environmentObject(RootViewModel())
     }
 }

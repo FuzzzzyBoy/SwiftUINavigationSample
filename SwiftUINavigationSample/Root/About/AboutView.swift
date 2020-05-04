@@ -24,6 +24,7 @@ struct AboutView: View {
             Text("Full info")
         }
     }
+    
 }
 
 struct AboutView_Previews: PreviewProvider {
