@@ -16,7 +16,7 @@ final class RootViewModel: ObservableObject {
     let gamesListViewModel = GamesListViewModel()
     
     func chooseRandomGame() {
-        gamesListViewModel.isSelectedGame = true
+        gamesListViewModel.selectRandomGame()
     }
     
 }

@@ -12,21 +12,21 @@ struct GamesListView: View {
     
     @ObservedObject var viewModel: GamesListViewModel
     
+    private var selectedGameViewModel: GameViewModel {
+        viewModel.getSelectionViewModel()
+    }
+    
     var body: some View {
         NavigationView {
             VStack {
-
-                List(viewModel.games) { game in
-                    NavigationLink(destination: GameView(game: game)) {
-                        Text(game.fullName)
+                List(viewModel.gameViewModels) { gameViewModel in
+                    NavigationLink(destination: GameView(viewModel: gameViewModel)) {
+                        Text(gameViewModel.game.fullName)
                     }
                 }
-                
-                NavigationLink(destination: GameView(game: viewModel.selectedGame), isActive: $viewModel.isSelectedGame) {
+                NavigationLink(destination: GameView(viewModel: self.selectedGameViewModel), isActive: $viewModel.isSelectedGame) {
                     Rectangle().frame(width: 0, height: 0, alignment: .bottom)
                 }
-                
-
             }
             .navigationBarTitle("Games")
         }

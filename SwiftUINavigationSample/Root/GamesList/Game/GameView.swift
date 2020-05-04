@@ -10,16 +10,19 @@ import SwiftUI
 
 struct GameView: View {
     
-    private(set) var game: Game
+    private(set) var viewModel: GameViewModel
     
     var body: some View {
-        Text(game.fullName)
+        Text(viewModel.game.fullName)
+            .onDisappear() {
+                self.viewModel.handler?()
+        }
     }
 
 }
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView(game: .basketball)
+        GameView(viewModel: GameViewModel(game: .basketball))
     }
 }

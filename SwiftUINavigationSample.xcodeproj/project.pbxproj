@@ -15,6 +15,7 @@
 		CF530D482460511E006EDD6A /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF530D472460511E006EDD6A /* RootViewModel.swift */; };
 		CF530D4A24605175006EDD6A /* RootViewTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF530D4924605175006EDD6A /* RootViewTab.swift */; };
 		CF530D4E24605B18006EDD6A /* GamesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF530D4D24605B18006EDD6A /* GamesListViewModel.swift */; };
+		CF530D5024606D0C006EDD6A /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF530D4F24606D0C006EDD6A /* GameViewModel.swift */; };
 		CFE1F69224603F0C00447E48 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE1F69124603F0C00447E48 /* RootView.swift */; };
 		CFFF5B7424603BB400C517D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFF5B7324603BB400C517D8 /* AppDelegate.swift */; };
 		CFFF5B7624603BB400C517D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFF5B7524603BB400C517D8 /* SceneDelegate.swift */; };
@@ -32,6 +33,7 @@
 		CF530D472460511E006EDD6A /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		CF530D4924605175006EDD6A /* RootViewTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewTab.swift; sourceTree = "<group>"; };
 		CF530D4D24605B18006EDD6A /* GamesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesListViewModel.swift; sourceTree = "<group>"; };
+		CF530D4F24606D0C006EDD6A /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		CFE1F69124603F0C00447E48 /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		CFFF5B7024603BB400C517D8 /* SwiftUINavigationSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUINavigationSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFFF5B7324603BB400C517D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,7 +58,6 @@
 		CF068742246044C200A74C32 /* GamesList */ = {
 			isa = PBXGroup;
 			children = (
-				CF0687452460456000A74C32 /* Game.swift */,
 				CF068743246044FE00A74C32 /* GamesListView.swift */,
 				CF530D4D24605B18006EDD6A /* GamesListViewModel.swift */,
 				CF0687472460465100A74C32 /* Game */,
@@ -67,7 +68,9 @@
 		CF0687472460465100A74C32 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				CF0687452460456000A74C32 /* Game.swift */,
 				CF530D3F246048FC006EDD6A /* GameView.swift */,
+				CF530D4F24606D0C006EDD6A /* GameViewModel.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF530D5024606D0C006EDD6A /* GameViewModel.swift in Sources */,
 				CF530D4A24605175006EDD6A /* RootViewTab.swift in Sources */,
 				CFFF5B7424603BB400C517D8 /* AppDelegate.swift in Sources */,
 				CF530D43246049F9006EDD6A /* AboutView.swift in Sources */,
