@@ -17,6 +17,11 @@ struct RootView: View {
                     Image(systemName: "list.dash")
                     Text("Games")
             }
+            AboutView()
+                .tabItem {
+                    Image(systemName: "person")
+                    Text("About")
+            }
         }
     }
 
