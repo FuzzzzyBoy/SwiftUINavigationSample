@@ -12,30 +12,14 @@ struct RootView: View {
 
     var body: some View {
         TabView {
-            SomeView()
+            GamesListView(games: Game.allCases)
                 .tabItem {
                     Image(systemName: "list.dash")
-                    Text("First")
-            }
-            SomeView()
-                .tabItem {
-                    Image(systemName: "list.dash")
-                    Text("Second")
-            }
-            SomeView()
-                .tabItem {
-                    Image(systemName: "list.dash")
-                    Text("Third")
+                    Text("Games")
             }
         }
     }
 
-}
-
-struct SomeView: View {
-    var body: some View {
-        Text("Hello, World!")
-    }
 }
 
 struct RootView_Previews: PreviewProvider {
