@@ -13,4 +13,10 @@ final class RootViewModel: ObservableObject {
     
     @Published var selectedTab: RootViewTab = .start
     
+    let gamesListViewModel = GamesListViewModel()
+    
+    func chooseRandomGame() {
+        gamesListViewModel.isSelectedGame = true
+    }
+    
 }

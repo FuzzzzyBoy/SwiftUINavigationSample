@@ -10,14 +10,23 @@ import SwiftUI
 
 struct GamesListView: View {
     
-    private(set) var games: [Game]
+    @ObservedObject var viewModel: GamesListViewModel
     
     var body: some View {
         NavigationView {
-            List(games) { game in
-                NavigationLink(destination: GameView(game: game)) {
-                    Text(game.fullName)
+            VStack {
+
+                List(viewModel.games) { game in
+                    NavigationLink(destination: GameView(game: game)) {
+                        Text(game.fullName)
+                    }
                 }
+                
+                NavigationLink(destination: GameView(game: viewModel.selectedGame), isActive: $viewModel.isSelectedGame) {
+                    Rectangle().frame(width: 0, height: 0, alignment: .bottom)
+                }
+                
+
             }
             .navigationBarTitle("Games")
         }
@@ -27,6 +36,6 @@ struct GamesListView: View {
 
 struct GamesView_Previews: PreviewProvider {
     static var previews: some View {
-        GamesListView(games: Game.allCases)
+        GamesListView(viewModel: .init())
     }
 }

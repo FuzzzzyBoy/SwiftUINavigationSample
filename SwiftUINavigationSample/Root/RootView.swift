@@ -23,7 +23,7 @@ struct RootView: View {
                     Text("Start")
             }
             .tag(RootViewTab.start)
-            GamesListView(games: Game.allCases)
+            GamesListView(viewModel: viewModel.gamesListViewModel)
                 .tabItem {
                     Image(systemName: "list.dash")
                     Text("Games")
